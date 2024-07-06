@@ -1,0 +1,50 @@
+{% extends 'entidades/index.html' %}
+
+
+{% block contenido %}
+
+<h2>Para comprar debes llenar este formulario de Datos.</h2>
+<form action="#" method="post">
+    <table border="1">
+        <tr>
+            <td><label for="nombre">Nombre:</label></td>
+            <td><input type="text" id="nombre" name="nombre" required></td>
+        </tr>
+        <tr>
+            <td><label for="domicilio">Domicilio:</label></td>
+            <td><input type="text" id="domicilio" name="domicilio" required></td>
+        </tr>
+        <tr>
+            <td><label for="edad">Cantidad de productos:</label></td>
+            <td><input type="number" id="cdp" name="cdp" required></td>
+        </tr>
+        <tr>
+            <td><label for="correo">Correo Electrónico:</label></td>
+            <td><input type="email" id="correo" name="correo" required></td>
+        </tr>
+        <tr>
+            <td><label for="telefono">Teléfono:</label></td>
+            <td><input type="tel" id="telefono" name="telefono" required></td>
+        </tr>
+        <tr>
+            <td><label for="nde">Nombre de Producto:</label></td>
+            <td><input type="text" id="ndp" name="ndp" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button type="submit">Enviar</button></td>
+        </tr>
+    </table>
+</form>
+
+{% for c in Clienete %}
+<tr>
+    <td>{{c.nombre}}</td>
+    <td>{{c.domicilio}}</td>
+    <td>{{c.cdp}}</td>
+    <td>{{c.correo}}</td>
+    <td>{{c.telefono}}</td>
+    <td>{{c.ndp}}</td>
+</tr>
+{% endfor %}
+    
+{% endblock contenido %}
